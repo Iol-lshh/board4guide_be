@@ -43,6 +43,11 @@ public class BoardRepositoryImplement_mixVersion implements BoardRepository, Boa
     }
 
     @Override
+    public Optional<BoardPost> findPostByTitle(String postName) {
+        return boardPostJpaRepository.findByTitle(postName);
+    }
+
+    @Override
     public boolean existsSameName(String boardName) {
         return boardJpaRepository.existsByName(boardName);
     }

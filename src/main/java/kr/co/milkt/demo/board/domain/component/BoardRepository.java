@@ -14,4 +14,5 @@ public interface BoardRepository {
     Optional<Board> findById(Long id);
 
     Optional<BoardPost> findPostById(Long postId);
+    Optional<BoardPost> findPostByTitle(String postName);
 }

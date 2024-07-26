@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 public class BoardPost {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String content;

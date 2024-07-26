@@ -1,8 +1,6 @@
 package kr.co.milkt.demo.board.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -14,6 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 public class BoardPostComment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Setter

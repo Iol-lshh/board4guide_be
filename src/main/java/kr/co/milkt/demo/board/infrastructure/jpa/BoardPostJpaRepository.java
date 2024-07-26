@@ -11,4 +11,7 @@ public interface BoardPostJpaRepository extends JpaRepository<BoardPost, Long> {
     Optional<BoardPost> findById(Long id);
 
     boolean existsById(Long id);
+
+    @Query("SELECT b FROM BoardPost b WHERE b.title = :title AND b.deleted IS NULL")
+    Optional<BoardPost> findByTitle(String title);
 }

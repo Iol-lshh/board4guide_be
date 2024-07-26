@@ -48,6 +48,11 @@ public class BoardRepositoryImplement_mybatisVersion implements BoardRepository,
     }
 
     @Override
+    public Optional<BoardPost> findPostByTitle(String postName) {
+        return Optional.empty();
+    }
+
+    @Override
     public boolean existsSameName(String boardName) {
         return false;
     }
