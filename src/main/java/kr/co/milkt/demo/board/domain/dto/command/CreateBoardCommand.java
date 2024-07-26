@@ -1,4 +1,4 @@
-package kr.co.milkt.demo.board.domain.command;
+package kr.co.milkt.demo.board.domain.dto.command;
 
 import kr.co.milkt.demo.board.domain.entity.Board;
 

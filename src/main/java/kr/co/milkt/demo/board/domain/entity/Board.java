@@ -1,9 +1,9 @@
 package kr.co.milkt.demo.board.domain.entity;
 
 import jakarta.persistence.*;
-import kr.co.milkt.demo.board.domain.command.CreateBoardPostCommand;
-import kr.co.milkt.demo.board.domain.command.UpdateBoardCommand;
-import kr.co.milkt.demo.board.domain.command.UpdateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardCommand;
+import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardPostCommand;
 import lombok.*;
 
 import java.time.LocalDateTime;

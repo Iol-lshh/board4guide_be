@@ -1,6 +1,6 @@
 package kr.co.milkt.demo.board.infrastructure.jpa;
 
-import kr.co.milkt.demo.board.domain.dto.BoardSimpleView;
+import kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -22,6 +22,6 @@ public interface BoardJpaRepository extends JpaRepository<Board, Long> {
 
     boolean existsById(Long id);
 
-    @Query("SELECT new kr.co.milkt.demo.board.domain.dto.BoardSimpleView(b.id, b.name) FROM Board b WHERE b.deleted IS NULL")
+    @Query("SELECT new kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView(b.id, b.name) FROM Board b WHERE b.deleted IS NULL")
     List<BoardSimpleView> findAllView();
 }

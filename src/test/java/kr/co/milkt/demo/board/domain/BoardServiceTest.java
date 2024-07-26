@@ -1,7 +1,7 @@
 package kr.co.milkt.demo.board.domain;
 
-import kr.co.milkt.demo.board.domain.command.CreateBoardCommand;
-import kr.co.milkt.demo.board.domain.command.CreateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
 import kr.co.milkt.demo.board.domain.component.BoardRepository;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import kr.co.milkt.demo.board.domain.entity.BoardPost;

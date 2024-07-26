@@ -1,4 +1,4 @@
-package kr.co.milkt.demo.board.domain.dto;
+package kr.co.milkt.demo.board.domain.dto.view;
 
 import kr.co.milkt.demo.board.domain.entity.BoardPost;
 

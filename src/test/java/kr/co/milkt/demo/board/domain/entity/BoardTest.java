@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import kr.co.milkt.demo.board.domain.command.CreateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
 
 import java.util.ArrayList;
 

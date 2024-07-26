@@ -1,6 +1,6 @@
 package kr.co.milkt.demo.board.domain.component;
 
-import kr.co.milkt.demo.board.domain.dto.BoardSimpleView;
+import kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView;
 
 import java.util.List;
 

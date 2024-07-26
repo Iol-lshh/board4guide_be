@@ -3,7 +3,7 @@ package kr.co.milkt.demo.board.infrastructure;
 import kr.co.milkt.demo.board.domain.component.BoardReader;
 import kr.co.milkt.demo.board.domain.component.BoardRepository;
 import kr.co.milkt.demo.board.domain.component.BoardValidator;
-import kr.co.milkt.demo.board.domain.dto.BoardSimpleView;
+import kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import kr.co.milkt.demo.board.domain.entity.BoardPost;
 import kr.co.milkt.demo.board.infrastructure.mybatis.BoardDao;

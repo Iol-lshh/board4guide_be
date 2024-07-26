@@ -1,6 +1,6 @@
 package kr.co.milkt.demo.board.infrastructure.mybatis;
 
-import kr.co.milkt.demo.board.domain.dto.BoardSimpleView;
+import kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

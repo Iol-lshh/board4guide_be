@@ -1,10 +1,10 @@
 package kr.co.milkt.demo.board.presentation;
 
 import kr.co.milkt.demo.board.domain.BoardService;
-import kr.co.milkt.demo.board.domain.command.CreateBoardCommand;
-import kr.co.milkt.demo.board.domain.command.CreateBoardPostCommand;
-import kr.co.milkt.demo.board.domain.command.UpdateBoardCommand;
-import kr.co.milkt.demo.board.domain.command.UpdateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardCommand;
+import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
+import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardCommand;
+import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardPostCommand;
 import kr.co.milkt.demo.common.library.domain.Result;
 import kr.co.milkt.demo.common.library.presentation.Response;
 import lombok.RequiredArgsConstructor;
