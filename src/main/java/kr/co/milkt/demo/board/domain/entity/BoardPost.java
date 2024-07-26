@@ -2,7 +2,6 @@ package kr.co.milkt.demo.board.domain.entity;
 
 import jakarta.persistence.*;
 import kr.co.milkt.demo.board.domain.command.UpdateBoardPostCommand;
-import kr.co.milkt.demo.common.library.clock.ClockManager;
 import lombok.*;
 
 import java.time.LocalDateTime;

@@ -7,7 +7,6 @@ import kr.co.milkt.demo.board.domain.command.UpdateBoardPostCommand;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
