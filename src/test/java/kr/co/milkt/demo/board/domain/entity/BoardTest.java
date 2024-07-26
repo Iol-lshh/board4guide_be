@@ -1,12 +1,13 @@
 package kr.co.milkt.demo.board.domain.entity;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
 
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
 
@@ -24,10 +25,10 @@ public class BoardTest {
             board.addPost(command);
 
             // Verify the effects of method call
-            Assertions.assertEquals(1, board.getPosts().size());
-            Assertions.assertEquals("Test Title", board.getPosts().get(0).getTitle());
-            Assertions.assertEquals("Test Content", board.getPosts().get(0).getContent());
-            Assertions.assertEquals(board, board.getPosts().get(0).getBoard());
+            assertEquals(1, board.getPosts().size());
+            assertEquals("Test Title", board.getPosts().get(0).getTitle());
+            assertEquals("Test Content", board.getPosts().get(0).getContent());
+            assertEquals(board, board.getPosts().get(0).getBoard());
         }
     }
 

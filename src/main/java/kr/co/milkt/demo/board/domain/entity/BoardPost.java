@@ -5,7 +5,6 @@ import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardPostCommand;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,9 +23,6 @@ public class BoardPost {
     @Setter
     @ManyToOne
     private Board board;
-
-    @OneToMany(mappedBy = "boardPost", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<BoardPostComment> comments;
 
     public void update(UpdateBoardPostCommand command) {
         this.title = command.title();

@@ -3,14 +3,17 @@ package kr.co.milkt.demo.board.domain;
 import kr.co.milkt.demo.board.domain.dto.command.CreateBoardCommand;
 import kr.co.milkt.demo.board.domain.dto.command.CreateBoardPostCommand;
 import kr.co.milkt.demo.board.domain.component.BoardRepository;
+import kr.co.milkt.demo.board.domain.dto.view.SimpleBoardView;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import kr.co.milkt.demo.board.domain.entity.BoardPost;
 import kr.co.milkt.demo.common.library.domain.Result;
+import kr.co.milkt.demo.common.library.domain.ResultStatus;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -49,10 +52,36 @@ public class BoardServiceTest {
             Result result = boardService.createBoardPost(command);
 
             assertEquals(Result.success(), result);
-            Optional<BoardPost> post = boardRepository.findPostByTitle("post_testCreateBoardPost_Success");
-            assertTrue(post.isPresent());
+            List<BoardPost> posts = boardRepository.findPostByTitle("post_testCreateBoardPost_Success");
+            assertTrue(!posts.isEmpty());
         }
     }
 
+    @Nested
+    class FindAllBoardsTest{
+        @Test
+        void testFindAllBoards_Success() {
+            Result result = boardService.findAllBoards();
 
+            assertEquals(ResultStatus.SUCCESS, result.status());
+            List<SimpleBoardView> boardViews = (List<SimpleBoardView>) result.data();
+            List<Board> boards = boardRepository.findAll();
+            assertEquals(boards.size(), boardViews.size());
+        }
+
+        @Test
+        void testFindAllBoards_ResultWithBoards() {
+            boardService.createBoard(new CreateBoardCommand("testFindAllBoards_ResultWithBoards_1"));
+            boardService.createBoard(new CreateBoardCommand("testFindAllBoards_ResultWithBoards_2"));
+
+            Result result = boardService.findAllBoards();
+            assertEquals(ResultStatus.SUCCESS, result.status());
+            List<SimpleBoardView> boards = (List<SimpleBoardView>) result.data();
+            List<SimpleBoardView> specifics = boards.stream()
+                    .filter(board -> board.name().equals("testFindAllBoards_ResultWithBoards_1")
+                            || board.name().equals("testFindAllBoards_ResultWithBoards_2"))
+                    .toList();
+            assertEquals(2, specifics.size());
+        }
+    }
 }

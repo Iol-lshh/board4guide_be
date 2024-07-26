@@ -7,7 +7,8 @@ import kr.co.milkt.demo.board.domain.dto.command.UpdateBoardPostCommand;
 import kr.co.milkt.demo.board.domain.component.BoardReader;
 import kr.co.milkt.demo.board.domain.component.BoardRepository;
 import kr.co.milkt.demo.board.domain.component.BoardValidator;
-import kr.co.milkt.demo.board.domain.dto.view.BoardSimpleView;
+import kr.co.milkt.demo.board.domain.dto.view.SimpleBoardPostView;
+import kr.co.milkt.demo.board.domain.dto.view.SimpleBoardView;
 import kr.co.milkt.demo.board.domain.entity.Board;
 import kr.co.milkt.demo.common.library.clock.ClockManager;
 import kr.co.milkt.demo.common.library.domain.Result;
@@ -27,8 +28,8 @@ public class BoardService {
 
     @Transactional(readOnly = true)
     public Result findAllBoards() {
-        List<BoardSimpleView> boardSimpleViews = boardReader.findAllView();
-        return Result.success(boardSimpleViews);
+        List<SimpleBoardView> simpleBoardViews = boardReader.findAllView();
+        return Result.success(simpleBoardViews);
     }
 
     @Transactional
@@ -61,6 +62,14 @@ public class BoardService {
         board.setDeleted(clockManager.now());
         boardRepository.save(board);
         return Result.success();
+    }
+
+    public Result findAllBoardPosts(Long boardId) {
+        if(!boardValidator.exists(boardId)){
+            return Result.fail("Not exists board");
+        }
+        List<SimpleBoardPostView> boardSimpleViews = boardReader.findAllBoardPostView();
+        return Result.success(boardSimpleViews);
     }
 
     @Transactional
@@ -99,4 +108,6 @@ public class BoardService {
         boardRepository.save(board);
         return Result.success();
     }
+
+
 }

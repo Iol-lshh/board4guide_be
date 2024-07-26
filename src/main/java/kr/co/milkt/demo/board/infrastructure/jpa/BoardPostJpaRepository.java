@@ -4,6 +4,7 @@ import kr.co.milkt.demo.board.domain.entity.BoardPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface BoardPostJpaRepository extends JpaRepository<BoardPost, Long> {
@@ -13,5 +14,5 @@ public interface BoardPostJpaRepository extends JpaRepository<BoardPost, Long> {
     boolean existsById(Long id);
 
     @Query("SELECT b FROM BoardPost b WHERE b.title = :title AND b.deleted IS NULL")
-    Optional<BoardPost> findByTitle(String title);
+    List<BoardPost> findByTitle(String title);
 }

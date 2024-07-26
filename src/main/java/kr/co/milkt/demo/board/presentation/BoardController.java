@@ -17,7 +17,7 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/all")
-    public Response findAllView(){
+    public Response findAllBoards(){
         Result result = boardService.findAllBoards();
         return Response.of(result);
     }
@@ -37,6 +37,12 @@ public class BoardController {
     @DeleteMapping("/{boardId}")
     public Response deleteBoard(Long boardId){
         Result result = boardService.deleteBoard(boardId);
+        return Response.of(result);
+    }
+
+    @GetMapping("/{boardId}/post")
+    public Response findAllBoardPosts(Long boardId){
+        Result result = boardService.findAllBoardPosts(boardId);
         return Response.of(result);
     }
 
