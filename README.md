@@ -10,7 +10,7 @@
       - JAVA_HOME : C:\Program Files\Amazon Corretto\jdk-21
       - Path : %JAVA_HOME%\bin
 - Spring Boot 3.3.2
-- Gradle 8.5 에서 작성
+- Gradle 8.x
 - MySQL, MSSQL, H2 Database 모두 가능하도록 작성
   - build.gradle, application.yml 에서 설정 변경 가능
     - 처음 확인시, h2로 확인해보세요 (주석처리 해둠)
