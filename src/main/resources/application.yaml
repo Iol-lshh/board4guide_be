@@ -1,14 +1,24 @@
+server:
+  port: 8080
 spring:
   application:
     name: demo
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mytest?serverTimezone=UTC&characterEncoding=UTF-8
-#    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: root
-    password: 1234!
+#    # MSSQL
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://localhost:1433;databaseName=mytest
+#    # MY-SQL
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/mytest?serverTimezone=UTC&characterEncoding=UTF-8
+#    username: root
+#    password: 1234!
+    # H2
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    # MSSQL
+#    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+#    # MY-SQL
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
     hibernate:
       ddl-auto: update
