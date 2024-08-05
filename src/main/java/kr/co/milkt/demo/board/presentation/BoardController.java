@@ -23,43 +23,43 @@ public class BoardController {
     }
 
     @PostMapping("/")
-    public Response createBoard(CreateBoardCommand command){
+    public Response createBoard(@RequestBody CreateBoardCommand command){
         Result result = boardService.createBoard(command);
         return Response.of(result);
     }
 
     @PostMapping("/{boardId}")
-    public Response updateBoard(UpdateBoardCommand command){
+    public Response updateBoard(@RequestBody UpdateBoardCommand command){
         Result result = boardService.updateBoard(command);
         return Response.of(result);
     }
 
     @DeleteMapping("/{boardId}")
-    public Response deleteBoard(Long boardId){
+    public Response deleteBoard(@PathVariable Long boardId){
         Result result = boardService.deleteBoard(boardId);
         return Response.of(result);
     }
 
     @GetMapping("/{boardId}/post")
-    public Response findAllBoardPosts(Long boardId){
+    public Response findAllBoardPosts(@PathVariable Long boardId){
         Result result = boardService.findAllBoardPosts(boardId);
         return Response.of(result);
     }
 
     @PostMapping("/{boardId}/post")
-    public Response createBoardPost(CreateBoardPostCommand command){
+    public Response createBoardPost(@RequestBody CreateBoardPostCommand command){
         Result result = boardService.createBoardPost(command);
         return Response.of(result);
     }
 
     @PostMapping("/{boardId}/post/{postId}")
-    public Response updateBoardPost(UpdateBoardPostCommand command){
+    public Response updateBoardPost(@RequestBody UpdateBoardPostCommand command){
         Result result = boardService.updateBoardPost(command);
         return Response.of(result);
     }
 
     @DeleteMapping("/{boardId}/post/{postId}")
-    public Response deleteBoardPost(Long boardId, Long postId){
+    public Response deleteBoardPost(@PathVariable Long boardId, @PathVariable Long postId){
         Result result = boardService.deleteBoardPost(boardId, postId);
         return Response.of(result);
     }

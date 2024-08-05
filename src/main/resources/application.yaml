@@ -10,6 +10,7 @@ spring:
 #    # MY-SQL
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://localhost:3306/mytest?serverTimezone=UTC&characterEncoding=UTF-8
+#    # 계정
 #    username: root
 #    password: 1234!
     # H2
@@ -19,10 +20,13 @@ spring:
 #    database-platform: org.hibernate.dialect.SQLServer2012Dialect
 #    # MY-SQL
 #    database-platform: org.hibernate.dialect.MySQL8Dialect
+    # DDL 자동 생성
     generate-ddl: true
+    # DDL 자동 생성 하이버네이트 옵션 (create, create-drop, update, validate, none)
     hibernate:
       ddl-auto: update
 mybatis:
+#    /src/main/resources/mapper/*.xml
     mapper-locations: classpath:mapper/*.xml
     configuration:
         map-underscore-to-camel-case: true
